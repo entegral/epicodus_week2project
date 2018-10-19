@@ -1,7 +1,10 @@
 // personal-info variables
 var name;
-
-// preference variables
+var question1;
+var question2;
+var question3;
+var question4;
+var question5;
 
 
 
@@ -10,15 +13,26 @@ var name;
 
 
 $(function() {
-  $("preferences").hide();
-  $("suggestion").hide();
 
-  // personal info variale assignment
-  $("form#personal-info").submit(function() {
+  $("form#personal-form").submit(function(event) {
+    event.preventDefault();
+
     name = $("input#name").val();
-    $("#personal-info-panel").hide();
+
+    if (name) {
+      $('#personal').addClass("hidden");
+      $('#preferences').removeClass("hidden");
+    } else {
+      alert("Please input your name before proceeding.")
+    }
   });
 
+  $('form#preferences-form').submit(function(event) {
+    event.preventDefault();
+    var companySize = $("#company-size").val()
 
+
+
+  });
 
 });
