@@ -15,5 +15,8 @@ img {
   float: left;
   margin: 8px;
   width: 15%;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 2px;
 
 }
