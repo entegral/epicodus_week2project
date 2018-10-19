@@ -99,7 +99,6 @@ var recordQuestion5 = function(vote) {
 };
 
 var generateResults = function () {
-  debugger;
   var result = ""
   if (cSharpTally >= Math.max(javaTally, phpTally, rubyTally)) {
     result = "C# appears to be your best match!";

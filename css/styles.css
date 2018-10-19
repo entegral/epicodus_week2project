@@ -5,3 +5,12 @@
 .hidden {
   display: none;
 }
+
+.jumbotron {
+  background-image: url("../img/jumbo.png");
+  height: 45%;
+}
+
+img {
+  float: left;
+}
