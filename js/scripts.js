@@ -102,24 +102,37 @@ var generateResults = function () {
   var result = ""
   if (cSharpTally >= Math.max(javaTally, phpTally, rubyTally)) {
     result = "C# appears to be your best match!";
-    $("#csharp-info").removeClass("hidden");
+    $("#csharp-info").slideDown();
     return result;
   }else if (javaTally >= Math.max(cSharpTally, phpTally,rubyTally)) {
     result = "Java appears to be your best match!"
-    $("#java-info").removeClass("hidden");
+    $("#java-info").slideDown();
     return result;
   }else if (phpTally >= Math.max(cSharpTally, javaTally,rubyTally)) {
     result = "PHP appears to be your best match!"
-    $("#php-info").removeClass("hidden");
+    $("#php-info").slideDown();
     return result;
   }else if (rubyTally >= Math.max(cSharpTally, javaTally, phpTally)) {
     result = "Ruby appears to be your best match!"
-    $("#ruby-info").removeClass("hidden");
+    $("#ruby-info").slideDown();
     return result;
   }
 };
 
 $(function() {
+
+  $("#personal").show();
+  $("#preferences-1").hide();
+  $("#preferences-2").hide();
+  $("#preferences-3").hide();
+  $("#preferences-4").hide();
+  $("#preferences-5").hide();
+  $("#track").hide();
+  $("#csharp-info").show();
+  $("#java-info").show();
+  $("#php-info").show();
+  $("#ruby-info").show();
+
 
   $("form#personal-form").submit(function(event) {
     event.preventDefault();
@@ -127,8 +140,8 @@ $(function() {
     name = $("input#name").val();
 
     if (name) {
-      $('#personal').addClass("hidden");
-      $('#preferences-1').removeClass("hidden");
+      $('#personal').hide();
+      $('#preferences-1').fadeIn();
     } else {
       alert("Please input your name before proceeding.")
     }
@@ -138,45 +151,57 @@ $(function() {
     event.preventDefault();
     companySize = $("#company-size").val();
     addVote(companySize, 1);
-    $('#preferences-1').addClass("hidden");
-    $('#preferences-2').removeClass("hidden");
+    $('#preferences-1').hide();
+    $('#preferences-2').fadeIn();
   });
 
   $('form#preferences-form-2').submit(function(event) {
     event.preventDefault();
     versatility = $("#versatility").val();
     addVote(versatility, 2);
-    $('#preferences-2').addClass("hidden");
-    $('#preferences-3').removeClass("hidden");
+    $('#preferences-2').hide();
+    $('#preferences-3').fadeIn();
   });
 
   $('form#preferences-form-3').submit(function(event) {
     event.preventDefault();
     newOrOld = $("#newOrOld").val();
     addVote(newOrOld, 3)
-    $('#preferences-3').addClass("hidden");
-    $('#preferences-4').removeClass("hidden");
+    $('#preferences-3').hide();
+    $('#preferences-4').fadeIn();
   });
 
   $('form#preferences-form-4').submit(function(event) {
     event.preventDefault();
     frontOrBackEnd = $("#frontOrBackEnd").val();
     addVote(frontOrBackEnd, 4)
-    $('#preferences-4').addClass("hidden");
-    $('#preferences-5').removeClass("hidden");
+    $('#preferences-4').hide();
+    $('#preferences-5').fadeIn();
   });
 
   $('form#preferences-form-5').submit(function(event) {
     event.preventDefault();
     interest = $("#interest").val();
     addVote(interest, 5)
-    $('#preferences-5').addClass("hidden");
-    $('#track').removeClass("hidden");
+    debugger;
+
+    $('#preferences-5').hide();
 
     var answer = generateResults();
+    $("#user-name").text("Well " + name + ", here is your suggested language track based upon the input your provided:");
     $("#result").text(answer);
 
+    $('#track').fadeIn();
   });
 
+  $("#return").click(function(){
+    $('#track').slideUp();
+    $("#csharp-info").slideUp();
+    $("#java-info").slideUp();
+    $("#php-info").slideUp();
+    $("#ruby-info").slideUp();
+
+    location.reload();
+  })
 
 });
