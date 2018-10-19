@@ -20,3 +20,15 @@ img {
   padding: 2px;
 
 }
+
+#startingpoint {
+  color: blue;
+}
+
+#startingpoint:hover {
+  text-decoration: underline;
+}
+
+ul li{
+  list-style-type: none;
+}

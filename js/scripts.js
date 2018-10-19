@@ -145,6 +145,9 @@ $(function() {
   $("#php-info").show();
   $("#ruby-info").show();
 
+  $("#startingpoint").click(function(){
+    alert("It should be noted that, as a developer, you will be expected to regularly learn new languages (as the need arises). The advise given here serves only as a starting point from which you can begin to learn the fundamental principles of programming.")
+  });
 
   $("form#personal-form").submit(function(event) {
     event.preventDefault();
