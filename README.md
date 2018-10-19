@@ -1,6 +1,6 @@
 # _Track Suggestion Website_
 
-#### By _**Robert Bruce_
+#### By _Robert Bruce_
 
 ## Description
 
