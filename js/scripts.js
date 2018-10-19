@@ -25,10 +25,6 @@ var addVote = function(selection, question) {
   }else if (question === 5) {
     recordQuestion5(selection);
   }
-  console.log("csharp: " + cSharpTally);
-  console.log("java: " + javaTally);
-  console.log("php: " + phpTally);
-  console.log("ruby: " + rubyTally);
 };
 
 var recordQuestion1 = function(vote) {
