@@ -195,7 +195,6 @@ $(function() {
     event.preventDefault();
     interest = $("#interest").val();
     addVote(interest, 5)
-    debugger;
 
     $('#preferences-5').slideUp();
 
@@ -214,6 +213,6 @@ $(function() {
     $("#ruby-info").slideUp();
 
     location.reload();
-  })
+  });
 
 });
